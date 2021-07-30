@@ -1,0 +1,203 @@
+/* TIPO DE FUENTE DE TODO EL CSS */
+*{  
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    }
+      
+        /* CUERPO DE LA PAGINA  */
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 100vw;
+        min-height: 100vh;
+        background-color: #371af3;
+        margin: 0;
+        /* Parte Logon */
+      }
+      
+      /* MAIN DEL TABLERO Y MARCADOR */
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+      
+      /*ENCABEZADO DE LA PAGINA */
+    header{
+        width: 100%;
+        padding: 20px;
+        background-color: #4643f8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      
+    header .logo{
+        color: white;
+        font-size: 30px;
+    }
+      
+    header .logo a{
+        color: white;
+        text-decoration: none;
+    }
+      
+    header .logo img{
+        width: 50px;
+        vertical-align: top;
+        line-height: 50px;
+    }
+      
+      /* NAV DE LA PAGINA */
+    nav{
+        display: flex;
+        flex-direction: row;
+        background-color: #333;
+      
+    }
+    nav a{
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        
+    }
+    nav a:hover{
+        background: black;
+    }
+        
+      /* ESPECIFICACION DEL TURNO ACTUAL */
+    h2.nombreTurno{
+          display: flex;
+          justify-content: center;
+          animation: flash;
+            animation-duration: 1.5s;
+          color: white;
+    }
+      
+    /*CONTENEDOR DE LOS BOTONES */
+       
+    .contenedorBotones{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+      
+    button {
+          display: inline-block;
+          height: 34px;
+          width: 180px;
+          border-radius: 6px;
+          cursor: pointer;
+          outline: none;
+          border: 0;
+          text-align: center;
+       
+    }
+      
+        /* BOTON PARTIDA NUEVA */
+    #partidanueva {
+          display: flex;
+          justify-content: center;
+    }
+    #boton-empezar-partida {
+          color: white;
+          background-color: rgb(19, 1, 104);
+          border-radius: 10px;
+          width: 225px;
+          height: 52px;
+          margin-top: 20px;
+          font-family: Arial;
+          text-shadow: 0 0 3px #333333;
+          border: 1px solid #84c5f3;
+          background-color: rgb(19, 1, 104);
+          box-shadow: 0 0 8px 1px #888888;
+          font-size: 21px;
+          cursor: pointer;
+          font-size: medium;
+          font-family: Arial, Helvetica, sans-serif;
+    }
+      
+        /* BOTON GUARDAR PARTIDA */
+    #guardarpartida {
+      
+          display: flex;
+          justify-content: center;
+    }
+    #boton-guardar-partida {
+          color: white;
+          background-color: rgb(19, 1, 104);
+          border-radius: 10px;
+          width: 225px;
+          height: 52px;
+          margin-top: 20px;
+          font-family: Arial;
+          text-shadow: 0 0 3px #333333;
+          border: 1px solid #84c5f3;
+          background-color: rgb(87, 82, 81);
+          box-shadow: 0 0 8px 1px #888888;
+          font-size: 21px;
+          cursor: pointer;
+          font-size: medium;
+          font-family: Arial, Helvetica, sans-serif;
+    }
+      
+        /* BOTON CARGAR PARTIDA */
+    #cargarpartida {
+          display: flex;
+          justify-content: center;
+    }
+    #boton-cargar-partida {
+          color: white;
+          background-color: rgb(19, 1, 104);
+          border-radius: 10px;
+          width: 225px;
+          height: 52px;
+          margin-top: 20px;
+          font-family: Arial;
+          text-shadow: 0 0 3px #333333;
+          border: 1px solid #84c5f3;
+          background-color: rgb(87, 82, 81);
+          box-shadow: 0 0 8px 1px #888888;
+          font-size: 21px;
+          cursor: pointer;
+          font-size: medium;
+          font-family: Arial, Helvetica, sans-serif;
+    }
+      
+      /* PIE DE PAGINA */
+    footer {
+        display: inline-block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 40px;
+        width: 100%;
+        background-color: #4643f8;
+        color: white;
+        text-align: center;
+        padding-top: 20px;
+    }
+      /* MEDIA QUERIES */
+      
+    @media screen and (max-width: 500px){
+        nav, .row{
+            flex-direction: column;
+        }
+    }
+      
+    @media (max-width: 768px) {
+        main {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+      
+    
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Damas KC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO DE LA PAGINA CON EL NOMBRE DEL JUEGO -->
+    <header>
+        <div class="logo">
+            <a href="#">Juego de Damas</a>
+        </div>
+        
+    </header>
+
+    <!-- CONTENEDOR DE LOS BOTONES LOGIN Y CONTACTO -->
+    <nav>
+        <a href="formulario.html">Iniciar Sesion / Registrarse</a>
+    </nav>
+    <br>
+    <br>
+
+    <!-- ACA VA A ESTAR EL MARCADOR CON LOS PUNTAJES DE CADA JUGADOR -->
+    <main>
+
+        <!-- DATOS JUGADOR 1 -->
+        <div id="jugador1" class="Contenedor " >
+            <p> Jugador N° 1 (Rojo)</p>
+            <p>Resultado</p>
+            <div class="fichaRoja"> </div>
+            <p id="puntos-jugador1" class="puntos">0</p>
+        </div>
+    
+        <!-- DATOS JUGADOR 2 -->
+        <div id="jugador2" class="Contenedor">
+            <p>Jugador N° 2 (Azul)</p>
+            <p>Resultado</p>
+            <div class="fichaAzul"> </div>
+            <p id="puntos-jugador2" class="puntos">0</p>
+        </div>
+    </main>
+    <div>
+         <!-- UTILIZACION DE 'BR' PARA ESPACIADO DENTRO DE LA PAGINA -->
+        <br>
+        <br>
+        
+         <!-- INDICA EL TURNO DE JUEGO ESPECIFICANDO EL COLOR DE LA FICHA -->
+        <h2 class="nombreTurno">Turno: Rojo</h2>
+    </div>
+    
+    <!-- TABLERO EN JS -->
+    <main>
+        <div id="Tablero" class="Tablero"></div>
+    </main>
+    
+     <!-- CONTENEDOR DE LOS BOTONES -->
+    <div class="contenedorBotones">
+
+        <!-- BOTON GUARDAR PARTIDA -->
+        <div id="guardarpartida">
+            <button id="boton-guardar-partida">Guardar partida</button>
+        </div>
+
+        <!-- BOTON PARTIDA NUEVA -->
+        <div id="partidanueva">
+            <button id="boton-empezar-partida">Nueva partida</button>
+        </div>
+
+        <!-- BOTON CARGAR PARTIDA -->
+        <div id="cargarpartida">
+            <button id="boton-cargar-partida">Cargar partida</button>
+        </div>    
+    </div>
+    
+    <!-- UTILIZACION DE 'BR' PARA ESPACIADO DENTRO DE LA PAGINA -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- PIE DE PAGINA CON LINK DEL REGLAMENTO Y NOMBRE DE LOS DESARROLLADORES -->
+      <footer>
+        <p>Reglamento: <a href="https://www.mundijuegos.com.ar/multijugador/damas/reglas/">Link al Reglamento</a> // Jeremias.S.Calzada - Ivan Kopech // 2021</p>
+      </footer>
+    
+      <!-- CONEXION CON JAVASCRIPT -->
+      <script src="app.js"></script>
+</body>
+
+</html>
