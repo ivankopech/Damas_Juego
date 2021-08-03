@@ -73,3 +73,63 @@ var Tablero  = [
     }
   }
 
+  var Turno = 1;
+  var fichaRojaVariable = document.getElementsByClassName('fichaRoja');
+  var fichaAzulVariable = document.getElementsByClassName('fichaAzul');
+  
+  function eventoClick(){
+      if (Turno ===1) {
+          for (var i = 0; i < fichaRojaVariable.length; i++) {
+              fichaRojaVariable[i].addEventListener('click', obtenerFichaObjeto);
+          }
+      }
+      else{
+          for (var i = 0; i < fichaAzulVariable.length; i++) {
+              fichaAzulVariable[i].addEventListener('click', obtenerFichaObjeto);
+          }
+      }
+  }
+
+  //OBJETO DE LA FICHA QUE SELECCIONEMOS
+  var obtenerFichaObjeto = {
+      idFila : null, 
+      idColumna: null, 
+      Rey: false,
+      moverIzquierda : false,
+      moverDerecha: false,
+      moverComerIzquierda: false,
+      moverComerDerecha: false,
+      moverPintarIzquierda: null,
+      moverPintarDerecha: null,
+      moverComerIzquierdaPintado: null,
+      moverComerDerechaPintado: null,
+      moverFilaPintar:null,
+      moverFilaComerPintado: null,
+  }
+  
+  function obtenerFicha(evento){
+      resetearTablero(); 
+      obtenerFichaObjeto.idFila = parseInt(evento.path[1].id.substring(5,6));
+      obtenerFichaObjeto.idColumna= parseInt(evento.path[1].id.substring(11,12));
+  
+      if (evento.target.classList.contains('Rey')) {
+          obtenerFichaObjeto.Rey = true;
+      }
+      else{
+          obtenerFichaObjeto.Rey = false;
+      }
+  
+      if (obtenerFichaObjeto.Rey === false) {
+          resetearMovimientosPermitidosObjeto(); 
+          for (let a = 1; a < 8 ; a++) {
+             buscarEspaciosDisponibles(obtenerFichaObjeto.idFila, obtenerFichaObjeto.idColumna, a, a);
+          }
+          resetearMovimientosPermitidosObjeto(); 
+          resetearObtenerFichaObjeto(); 
+          for (let a = 1; a < 8 ; a++) {
+             buscarEspaciosDisponibles(obtenerFichaObjeto.idFila, obtenerFichaObjeto.idColumna, a, a);
+          }
+      }
+  }
+
+  
