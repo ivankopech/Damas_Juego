@@ -132,4 +132,54 @@ var Tablero  = [
       }
   }
 
-  
+  var MovimientosPermitidosObjeto = {
+    SeguirMoviendoDerecha: true,
+    SeguirMoviendoIzquierda: true,
+}
+function buscarEspaciosDisponibles(fila , columna, aMoverColumna , aMoverFila){
+    obtenerFichaObjeto.moverPintarIzquierda = columna - aMoverColumna;
+    obtenerFichaObjeto.moverPintarDerecha = columna + aMoverColumna;
+
+    if (Turno ===1) {
+        obtenerFichaObjeto.moverFilaPintar = fila + aMoverFila;
+    }
+    else{
+        obtenerFichaObjeto.moverFilaPintar = fila - aMoverFila
+    }
+    if (MovimientosPermitidosObjeto.SeguirMoviendoDerecha === true) {
+        if (obtenerFichaObjeto.moverPintarDerecha <= 7 && obtenerFichaObjeto.moverFilaPintar <= 7 && obtenerFichaObjeto.moverFilaPintar >= 0) {
+            if (Tablero[obtenerFichaObjeto.moverFilaPintar][obtenerFichaObjeto.moverPintarDerecha]===null) {
+                obtenerFichaObjeto.moverDerecha = true;
+
+                var Pintar = getElementById('fila-' + obtenerFichaObjeto.moverFilaPintar + '-col-'+ obtenerFichaObjeto.moverPintarDerecha);
+                Pintar.style.backgroundColor = 'gray'
+                
+            }
+            else{
+                MovimientosPermitidosObjeto.SeguirMoviendoDerecha = false;
+                obtenerFichaObjeto.moverDerecha = false;
+            }   
+        }
+        else{
+            obtenerFichaObjeto.moverDerecha = false;
+        } 
+    }
+    if (MovimientosPermitidosObjeto.SeguirMoviendoIzquierda === true) {
+        if (obtenerFichaObjeto.moverPintarIzquierda >= 0 && obtenerFichaObjeto.moverFilaPintar >= 0 && obtenerFichaObjeto.moverFilaPintar <= 7) {
+            if (Tablero[obtenerFichaObjeto.moverFilaPintar][obtenerFichaObjeto.moverPintarIzquierda]=== null) {
+
+                obtenerFichaObjeto.moverIzquierda = true;
+                var Pintar = document.getElementById('fila-' + obtenerFichaObjeto.moverFilaPintar + '-col-' + obtenerFichaObjeto.moverPintarIzquierda);
+                Pintar.style.backgroundColor = 'gray';
+            }
+            else{
+                MovimientosPermitidosObjeto.SeguirMoviendoIzquierda = false;
+                obtenerFichaObjeto.moverIzquierda = false;
+            } 
+        }
+        else{
+            obtenerFichaObjeto.moverIzquierda = false;
+        }
+    }
+}
+
